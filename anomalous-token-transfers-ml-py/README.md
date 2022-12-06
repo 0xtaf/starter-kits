@@ -14,15 +14,16 @@ An [Isolation Forest](https://scikit-learn.org/stable/modules/generated/sklearn.
 
 The model considered 0.387% of the training dataset to be anomalous for `ANOMALY_THRESHOLD=0.5`, including 4 of the following known exploit transactions:
 
-* (DETECTED) '0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56', # SaddleFinance Exploit
-* (DETECTED) '0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7', # Beanstalk Flashloan Exploit
-* (DETECTED) '0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530', # FeiProtocol-Fuse Exploit
-* (DETECTED) '0x958236266991bc3fe3b77feaacea120f172c0708ad01c7a715b255f218f9313c', # Inverse Finance Exploit 2
-* '0x600373f67521324c8068cfd025f121a0843d57ec813411661b07edc5ff781842', # Inverse Finance Exploit 1
-* '0xe0b0c2672b760bef4e2851e91c69c8c0ad135c6987bbf1f43f5846d89e691428', # Revest Finance Exploit
+- (DETECTED) '0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56', # SaddleFinance Exploit
+- (DETECTED) '0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7', # Beanstalk Flashloan Exploit
+- (DETECTED) '0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530', # FeiProtocol-Fuse Exploit
+- (DETECTED) '0x958236266991bc3fe3b77feaacea120f172c0708ad01c7a715b255f218f9313c', # Inverse Finance Exploit 2
+- '0x600373f67521324c8068cfd025f121a0843d57ec813411661b07edc5ff781842', # Inverse Finance Exploit 1
+- '0xe0b0c2672b760bef4e2851e91c69c8c0ad135c6987bbf1f43f5846d89e691428', # Revest Finance Exploit
 
 The model was trained on 14,469 Ethereum mainnet transactions executed on and after 12-01-21.
 The training dataset comprises 45 features for each transaction:
+
 ```
 MODEL_FEATURES = [
     # First 40 features are selected erc20 token transfer counts and values in the tx that's being evaluated..
@@ -102,6 +103,12 @@ The model uses [Local Interpretable Model-Agnostic Explanations (LIME)](https://
 ## Supported Chains
 
 - Ethereum
+- Optimism
+- Binance Smart Chain
+- Polygon
+- Fantom
+- Arbitrum
+- Avalanche
 
 ## Alerts
 
@@ -170,7 +177,6 @@ $ npm run tx 0x404666af36d5f2e11f763391be0a5b40ae78dfd4304b4f22e3a53c369e779bf1
   "addresses": []
 }
 ```
-
 
 ### Anomalous Tx Example
 
